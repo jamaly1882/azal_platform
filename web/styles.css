@@ -27,3 +27,7 @@
 .project-recognition a,.achievement-source-link{color:#087e8c;font-weight:700;text-decoration:underline;text-underline-offset:3px}.project-recognition a:hover,.achievement-source-link:hover{color:#064e5b}.project-recognition a:focus-visible,.achievement-source-link:focus-visible{outline:2px solid #0ba9b8;outline-offset:3px}.achievement-source-link span{margin-right:5px}
 
 .contact-phone{margin-top:28px}.contact-phone>span{display:block;font-size:11px;color:#9db4bf;margin-bottom:9px}.contact-phone>div{display:flex;flex-wrap:wrap;gap:10px}.contact-phone a{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid #315468;border-radius:5px;color:#e1f5f5;font:600 14px Arial,sans-serif;letter-spacing:.5px;transition:background .2s,border-color .2s}.contact-phone a:hover{background:#123c50;border-color:#30c5ce}.contact-phone a:focus-visible{outline:2px solid #30c5ce;outline-offset:3px}
+
+.project-screenshot{background:#fff;display:flex;align-items:center;justify-content:center}.project-screenshot:before{display:none}.project-screenshot img{display:block;width:100%;height:100%;object-fit:contain}
+
+.invest-core img{width:78px;height:78px;object-fit:contain;transform:rotate(-45deg);border-radius:50%;background:#fff}
