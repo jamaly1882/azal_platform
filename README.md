@@ -1,16 +1,15 @@
-# azal_platform
+# أزال سوفت
 
-A new Flutter project.
+موقع تعريفي عربي متجاوب لشركة أزال سوفت للحلول الرقمية، يعرض خدمات الشركة ومشاريعها. الموقع موجود في مجلد `web` ويعمل كصفحات ثابتة دون الحاجة إلى Flutter أو خادم خلفي.
 
-## Getting Started
+## التشغيل محلياً
 
-This project is a starting point for a Flutter application.
+```sh
+python3 -m http.server 8000 --directory web
+```
 
-A few resources to get you started if this is your first Flutter project:
+ثم افتح `http://localhost:8000`. يمكن نشر محتويات مجلد `web` على أي استضافة للمواقع الثابتة.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+نموذج التواصل ينسخ تفاصيل الرسالة فقط ولا يرسلها تلقائياً، لأن بيانات التواصل وخدمة استقبال الرسائل لم تُحدد بعد. لإتاحة الإرسال المباشر، يجب ربطه بخدمة استقبال أو إضافة بيانات التواصل الصحيحة.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+يبقى مشروع Flutter الأصلي في المستودع منفصلاً عن الموقع الثابت.
