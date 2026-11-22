@@ -1,21 +1,25 @@
 const toggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.main-nav');
-toggle.addEventListener('click', () => {
-  const open = toggle.getAttribute('aria-expanded') !== 'true';
-  toggle.setAttribute('aria-expanded', String(open));
-  toggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
-  navigation.classList.toggle('open', open);
-});
-navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  navigation.classList.remove('open');
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', 'فتح القائمة');
-}));
-document.querySelector('#year').textContent = new Date().getFullYear();
+if (toggle && navigation) {
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+    navigation.classList.toggle('open', open);
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navigation.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'فتح القائمة');
+  }));
+}
+
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
 
 const form = document.querySelector('#contact-form');
 const status = document.querySelector('#form-status');
-form.addEventListener('submit', async (event) => {
+form?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const data = new FormData(form);
   const message = `مرحباً فريق أزال سوفت،\nالاسم: ${data.get('name')}\n${data.get('organization') ? `جهة العمل: ${data.get('organization')}\n` : ''}تفاصيل المشروع: ${data.get('message')}`;
