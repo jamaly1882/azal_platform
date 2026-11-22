@@ -9,3 +9,41 @@
 .brand-mark{display:flex;align-items:center;justify-content:center;transform:none;background:#fff;border-radius:5px;padding:3px}.brand-mark img{display:block;width:100%;height:100%;object-fit:contain}.brand-mark.large{width:66px;height:62px;transform:none;border-radius:9px;padding:7px}.footer-brand .brand-mark{background:#fff}
 
 .water-circle{background:#fff;overflow:hidden}.water-circle img{width:100%;height:100%;object-fit:contain}
+
+/* Program band (مسرّعة وثبة) + embedded application card */
+.hero-program{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:10px 14px;border:1px solid #2b5564;border-radius:6px;background:rgba(12,42,59,.62);font-size:11px;color:#a9c1c8;transition:border-color .2s,background .2s;max-width:100%}
+.hero-program:hover{border-color:#2fb8c4;background:rgba(16,58,78,.8)}
+.hero-program-badge{flex-shrink:0;background:#12414f;color:#4fdbe2;border-radius:4px;padding:4px 8px;font-size:10px;font-weight:700;white-space:nowrap}
+.hero-program svg{width:15px;height:15px;color:#35d5dd;flex-shrink:0}
+.program-band{background:#0b2c40;color:white;padding:80px 0;position:relative;overflow:hidden}
+.program-band:before{content:'';position:absolute;width:560px;height:560px;border:1px solid #3cbcc52a;border-radius:50%;left:-220px;bottom:-280px;box-shadow:0 0 0 70px #3cbcc509,0 0 0 140px #3cbcc507}
+.program-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.program-copy h2{font-size:clamp(28px,3.4vw,38px);line-height:1.5;letter-spacing:-1px;margin:16px 0}
+.program-copy h2 em{color:#2dd0dc;font-style:normal}
+.program-copy p{font-size:13px;line-height:2.1;color:#a2b9c2;max-width:470px;margin:0}
+.program-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.program-points{display:flex;flex-direction:column;gap:12px}
+.program-point{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:16px 18px;background:rgba(9,38,54,.7);border:1px solid #20505f;border-radius:8px}
+.program-point>span{font:700 13px Arial;color:#3fd3dd;border:1px solid #2a6373;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;direction:ltr}
+.program-point b{display:block;font-size:13px;margin-bottom:4px}
+.program-point small{font-size:11px;line-height:1.9;color:#93aab4}
+.visual-apply{background:linear-gradient(135deg,#0f4250,#0a2a3d)}
+.apply-art{position:absolute;inset:0}
+.apply-sheet{position:absolute;width:58%;height:150px;top:48px;left:21%;background:#f3f9f9;border:5px solid #b6d8da;border-radius:7px;padding:14px;box-shadow:0 18px 30px #001d2980;display:flex;flex-direction:column;gap:7px}
+.apply-sheet-head{display:block;width:45%;height:6px;background:#4f8b93;border-radius:2px;margin-bottom:3px}
+.apply-sheet i{display:block;height:5px;background:#ddecec;border-radius:2px}
+.apply-sheet i:nth-of-type(2){width:82%}
+.apply-sheet i:nth-of-type(3){width:66%}
+.apply-sheet-row{display:flex;gap:6px;margin-top:2px}
+.apply-sheet-row b{flex:1;height:20px;background:#e8f4f3;border:1px solid #cfe4e3;border-radius:3px}
+.apply-ring{position:absolute;border:1px solid #55c8d040;border-radius:50%;width:300px;height:300px;top:-25px;left:calc(50% - 150px);border-style:dashed}
+@media(max-width:1000px){.program-inner{grid-template-columns:1fr;gap:34px}}
+@media(max-width:760px){.program-band{padding:60px 0}.program-actions .button{width:100%;justify-content:space-between}.hero-program{display:none}}
+
+/* Wide card for the accelerator application entry (05) */
+@media(min-width:761px){
+  .project-card-wide{grid-column:1/-1;display:grid;grid-template-columns:.9fr 1.1fr}
+  .project-card-wide .project-visual{height:100%;min-height:250px}
+  .project-card-wide .project-info{display:flex;flex-direction:column;justify-content:center}
+  .project-card-wide .project-info p{min-height:0}
+}
