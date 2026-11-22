@@ -10,6 +10,28 @@
 
 .water-circle{background:#fff;overflow:hidden}.water-circle img{width:100%;height:100%;object-fit:contain}
 
+/* Project methodology and professional milestones */
+.project-process{margin-top:48px;padding:32px;border:1px solid #dfeaea;border-radius:8px;background:#f7fbfb}.process-intro{display:flex;align-items:end;justify-content:space-between;gap:20px}.process-intro h3{font-size:24px;margin:10px 0 5px}.process-intro p{color:#829198;font-size:12px;line-height:1.9;margin:0}.process-label{font:10px Arial,sans-serif;letter-spacing:1.5px;direction:ltr;color:#9aafb3;white-space:nowrap}.process-grid{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:0;margin:28px 0 0}.process-grid li{border-top:2px solid #cde8e8;padding-top:15px}.process-grid li>span{display:grid;place-items:center;background:#def4f3;color:#058c9b;border-radius:50%;height:31px;width:31px;font:700 10px Arial,sans-serif}.process-grid h4{font-size:13px;margin:13px 0 6px}.process-grid p{font-size:11px;line-height:1.9;color:#829198;margin:0}.achievements-section{background:#f5f9f9}.achievements-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.achievement-card{background:#fff;border:1px solid #e1ebeb;border-radius:8px;padding:25px;display:flex;flex-direction:column;min-height:260px}.achievement-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.achievement-icon{display:grid;place-items:center;width:43px;height:43px;background:#e8f8f8;color:#0aa7b5;border-radius:7px;font-size:22px}.achievement-year{font:11px Arial,sans-serif;letter-spacing:1px;color:#91a7ac}.achievement-tag{color:#0aa2af;font-size:11px;font-weight:700}.achievement-card h3{font-size:17px;margin:9px 0}.achievement-card p{color:#7c8e97;font-size:12px;line-height:2;margin:0 0 18px}.achievement-source{border-top:1px solid #eaf0f0;padding-top:14px;margin-top:auto;color:#55717c;font-size:10px;line-height:1.8}
+@media(max-width:1000px){.main-nav{gap:15px}.process-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.process-intro{align-items:start;flex-direction:column}.project-process{padding:23px}.process-grid{grid-template-columns:repeat(2,1fr)}.achievements-grid{grid-template-columns:1fr}.achievement-card{min-height:0}}
+@media(max-width:420px){.process-grid{grid-template-columns:1fr}.process-grid li{display:grid;grid-template-columns:32px 1fr;column-gap:12px}.process-grid li>span{grid-row:span 2}.process-grid h4{margin:2px 0 4px}}
+@media(min-width:761px) and (max-width:900px){.header-cta{display:none}.main-nav{gap:12px}}
+@media(max-width:760px){.main-nav{gap:0}}
+
+.project-image-link{display:block}.project-image-link:focus-visible{outline:3px solid #17bed0;outline-offset:-3px}.project-image-link .project-visual{transition:filter .2s}.project-image-link:hover .project-visual{filter:brightness(1.1)}
+
+.project-resources{margin:16px 0 4px}.project-resources>span{display:block;font-size:11px;color:#829198;font-weight:600;margin-bottom:8px}.project-resources>div{display:flex;flex-wrap:wrap;gap:8px}.project-resources a{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;background:#edf8f8;border:1px solid #d5eeee;border-radius:4px;color:#117e8a;font-size:11px;font-weight:700}.project-resources a:hover{background:#daf2f2}.project-resources a:focus-visible{outline:2px solid #0ba9b8;outline-offset:2px}.project-resources svg{width:13px;height:13px}
+
+.project-recognition{display:flex;align-items:flex-start;gap:8px;margin-top:14px;padding:10px 12px;border-radius:5px;background:#eaf8f7;color:#187582;font-size:11px;font-weight:600;line-height:1.8}.project-recognition span{font-size:15px;line-height:1.4;color:#0ca8b6}.achievements-grid{grid-template-columns:repeat(2,1fr)}@media(max-width:760px){.achievements-grid{grid-template-columns:1fr}}
+
+.project-recognition a,.achievement-source-link{color:#087e8c;font-weight:700;text-decoration:underline;text-underline-offset:3px}.project-recognition a:hover,.achievement-source-link:hover{color:#064e5b}.project-recognition a:focus-visible,.achievement-source-link:focus-visible{outline:2px solid #0ba9b8;outline-offset:3px}.achievement-source-link span{margin-right:5px}
+
+.contact-phone{margin-top:28px}.contact-phone>span{display:block;font-size:11px;color:#9db4bf;margin-bottom:9px}.contact-phone>div{display:flex;flex-wrap:wrap;gap:10px}.contact-phone a{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid #315468;border-radius:5px;color:#e1f5f5;font:600 14px Arial,sans-serif;letter-spacing:.5px;transition:background .2s,border-color .2s}.contact-phone a:hover{background:#123c50;border-color:#30c5ce}.contact-phone a:focus-visible{outline:2px solid #30c5ce;outline-offset:3px}
+
+.project-screenshot{background:#fff;display:flex;align-items:center;justify-content:center}.project-screenshot:before{display:none}.project-screenshot img{display:block;width:100%;height:100%;object-fit:contain}
+
+.invest-core img{width:78px;height:78px;object-fit:contain;transform:rotate(-45deg);border-radius:50%;background:#fff}
+
 /* Program band (مسرّعة وثبة) + embedded application card */
 .hero-program{display:inline-flex;align-items:center;gap:12px;margin-top:26px;padding:10px 14px;border:1px solid #2b5564;border-radius:6px;background:rgba(12,42,59,.62);font-size:11px;color:#a9c1c8;transition:border-color .2s,background .2s;max-width:100%}
 .hero-program:hover{border-color:#2fb8c4;background:rgba(16,58,78,.8)}
