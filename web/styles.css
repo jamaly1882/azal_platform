@@ -21,6 +21,18 @@
 .project-image-link{display:block}.project-image-link:focus-visible{outline:3px solid #17bed0;outline-offset:-3px}.project-image-link .project-visual{transition:filter .2s}.project-image-link:hover .project-visual{filter:brightness(1.1)}
 
 .project-resources{margin:16px 0 4px}.project-resources>span{display:block;font-size:11px;color:#829198;font-weight:600;margin-bottom:8px}.project-resources>div{display:flex;flex-wrap:wrap;gap:8px}.project-resources a{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;background:#edf8f8;border:1px solid #d5eeee;border-radius:4px;color:#117e8a;font-size:11px;font-weight:700}.project-resources a:hover{background:#daf2f2}.project-resources a:focus-visible{outline:2px solid #0ba9b8;outline-offset:2px}.project-resources svg{width:13px;height:13px}
+.project-resources ol.video-list{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.project-resources .video-list a{display:flex;align-items:center;gap:10px;width:100%;padding:9px 11px;text-align:right;line-height:1.6}
+.project-resources .video-list .video-order{font:700 10px/1 Arial;color:#0aa3b1;background:#d9f1f1;border-radius:3px;padding:5px 6px;flex-shrink:0;direction:ltr}
+.project-resources .video-list .video-title{flex:1;font-size:11.5px;font-weight:600;color:#1d4450}
+.project-resources .video-list svg{flex-shrink:0;color:#0ba9b8}
+.project-resources .video-list .is-pending{background:#f6f9f9;border-color:#e7edee;border-style:dashed;cursor:default}
+.project-resources .video-list .is-pending .video-order{background:#e9eef0;color:#93a4a9}
+.project-resources .video-list .is-pending .video-title{color:#8b9b9f;font-weight:500}
+.project-resources .video-list .is-pending:hover{background:#f6f9f9}
+.video-soon{flex-shrink:0;font-size:9.5px;font-weight:700;color:#a5b3b7;border:1px solid #e2e9ea;background:#fff;border-radius:20px;padding:3px 7px;white-space:nowrap}
+.project-info>a.project-source{border-top:0;justify-content:flex-start;gap:8px;padding-top:0;margin-top:14px;font-size:11px;color:#117e8a}
+.project-info>a.project-source svg{width:13px;height:13px}
 
 .project-recognition{display:flex;align-items:flex-start;gap:8px;margin-top:14px;padding:10px 12px;border-radius:5px;background:#eaf8f7;color:#187582;font-size:11px;font-weight:600;line-height:1.8}.project-recognition span{font-size:15px;line-height:1.4;color:#0ca8b6}.achievements-grid{grid-template-columns:repeat(2,1fr)}@media(max-width:760px){.achievements-grid{grid-template-columns:1fr}}
 
