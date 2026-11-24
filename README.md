@@ -36,3 +36,16 @@ firebase deploy --only hosting --project PROJECT_ID
 ```
 
 استبدل `PROJECT_ID` بمعرّف مشروع Firebase المقصود. إذا كان المشروع يحتوي على عدة مواقع استضافة، يجب إعداد هدف استضافة للموقع المطلوب بدلاً من النشر على الموقع الافتراضي.
+
+لتثبيت المشروع محلياً بدل تمريره في كل مرة، انسخ `.firebaserc.example` إلى `.firebaserc` وضع معرّف مشروعك فيه، ثم نفّذ `firebase deploy --only hosting` (أو استخدم `firebase use --add` لاختيار المشروع). ملف `.firebaserc` متجاهل في Git، لذا لن يُرفع مع التغييرات.
+
+### النشر التلقائي عبر GitHub Actions
+
+يوجد سير عمل جاهز في `.github/workflows/firebase-hosting.yml` ينشر مجلد `web` إلى Firebase Hosting عند الدفع إلى فرع `master`، ويمكن تشغيله يدوياً من تبويب Actions. الإعداد مرة واحدة فقط:
+
+1. في Firebase Console: Project settings ← Service accounts ← Generate new private key لتنزيل مفتاح حساب خدمة بصيغة JSON، مع منح الحساب دور **Firebase Hosting Admin**.
+2. في GitHub: Settings ← Secrets and variables ← Actions ← New repository secret، وأنشئ سراً باسم `FIREBASE_SERVICE_ACCOUNT` الصق فيه محتوى ملف JSON كاملاً.
+3. أنشئ متغيراً (وليس سراً) باسم `FIREBASE_PROJECT_ID` يحمل معرّف مشروع Firebase. أو تجاهله ومرّر المعرّف كمدخل عند تشغيل السير يدوياً.
+4. شغّل السير من Actions ← Firebase Hosting ← Run workflow، أو ادفع التغييرات إلى `master`.
+
+لا تضع مفاتيح حساب الخدمة في المستودع أو في أي ملف تُرفعه؛ السير يقرأها من أسرار GitHub فقط.

@@ -1,0 +1,64 @@
+name: Firebase Hosting
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Firebase project ID (optional; falls back to FIREBASE_PROJECT_ID secret/variable)"
+        required: false
+        type: string
+  push:
+    branches: [master]
+    paths:
+      - "web/**"
+      - "firebase.json"
+      - ".firebaserc"
+      - ".github/workflows/firebase-hosting.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-hosting-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy web/ to Firebase Hosting
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Write Firebase service account key
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "${FIREBASE_SERVICE_ACCOUNT}" ]; then
+            echo "::error::Missing secret FIREBASE_SERVICE_ACCOUNT. Add a Firebase service-account JSON key under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          umask 077
+          printf '%s' "${FIREBASE_SERVICE_ACCOUNT}" > "${RUNNER_TEMP}/firebase-service-account.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=${RUNNER_TEMP}/firebase-service-account.json" >> "${GITHUB_ENV}"
+
+      - name: Deploy to Firebase Hosting
+        env:
+          FIREBASE_PROJECT_ID: ${{ github.event.inputs.project_id || secrets.FIREBASE_PROJECT_ID || vars.FIREBASE_PROJECT_ID }}
+        run: |
+          if [ -z "${FIREBASE_PROJECT_ID}" ]; then
+            echo "::error::Missing Firebase project ID. Pass it as the project_id input, or set FIREBASE_PROJECT_ID as a secret or variable."
+            exit 1
+          fi
+          echo "Deploying web/ to project ${FIREBASE_PROJECT_ID}"
+          npx --yes firebase-tools@15.37.0 deploy \
+            --only hosting \
+            --project "${FIREBASE_PROJECT_ID}" \
+            --non-interactive

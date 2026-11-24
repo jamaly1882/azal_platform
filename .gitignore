@@ -1,3 +1,10 @@
+# Node (local Firebase CLI install)
+node_modules/
+package-lock.json
+
+# Firebase local project mapping (copy from .firebaserc.example)
+.firebaserc
+
 # Miscellaneous
 *.class
 *.log
